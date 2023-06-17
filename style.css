@@ -1,0 +1,184 @@
+body.active1 {
+  margin: 0;
+  padding: 0;
+  font-family: "Barlow", sans-serif;
+  color: white;
+  font-size: 32px;
+  --mainBackground: hsl(222, 26%, 31%);
+  --keysBackground: hsl(223, 31%, 20%);
+  --screenBackground: hsl(224, 36%, 15%);
+  --delKey: hsl(225, 21%, 49%);
+  --delKeyShadow: hsl(224, 28%, 35%);
+  --equalsKey: hsl(6, 63%, 50%);
+  --equalsKeyShadow: hsl(6, 70%, 34%);
+  --Keys: hsl(30, 25%, 89%);
+  --KeysShadow: hsl(28, 16%, 65%);
+  --screenText: hsl(0, 0%, 100%);
+  --keyText: hsl(221, 14%, 31%);
+}
+body.active2 {
+  margin: 0;
+  padding: 0;
+  font-family: "Barlow", sans-serif;
+  color: hsl(60, 10%, 19%);
+  font-size: 32px;
+  --mainBackground: hsl(0, 0%, 90%);
+  --keysBackground: hsl(0, 5%, 81%);
+  --screenBackground: hsl(0, 0%, 93%);
+  --delKey: hsl(185, 42%, 37%);
+  --delKeyShadow: hsl(185, 58%, 25%);
+  --equalsKey: hsl(25, 98%, 40%);
+  --equalsKeyShadow: hsl(25, 99%, 27%);
+  --Keys: hsl(45, 7%, 89%);
+  --KeysShadow: hsl(35, 11%, 61%);
+  --screenText: hsl(60, 10%, 19%);
+  --keyText: hsl(60, 10%, 19%);
+}
+body.active3 {
+  margin: 0;
+  padding: 0;
+  font-family: "Barlow", sans-serif;
+  color: hsl(52, 100%, 62%);
+  font-size: 32px;
+  --mainBackground: hsl(268, 75%, 9%);
+  --keysBackground: hsl(268, 71%, 12%);
+  --screenBackground: hsl(268, 71%, 12%);
+  --delKey: hsl(281, 89%, 26%);
+  --delKeyShadow: hsl(285, 91%, 52%);
+  --equalsKey: hsl(176, 100%, 44%);
+  --equalsKeyShadow: hsl(177, 92%, 70%);
+  --Keys: hsl(268, 47%, 21%);
+  --KeysShadow: hsl(290, 70%, 36%);
+  --screenText: hsl(52, 100%, 62%);
+  --keyText: hsl(52, 100%, 62%);
+  --equals:hsl(198, 20%, 13%);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--mainBackground);
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  margin: 0px;
+  padding: 0px;
+}
+
+.container button {
+  height: 60px;
+  width: 80px;
+  background-color: var(--Keys);
+  border-radius: 8px;
+  margin: 5px;
+  font-size: 32px;
+  font-family: "Barlow", sans-serif;
+  box-shadow: 0px 2px var(--KeysShadow);
+  border-color: var(--Keys);
+  color: var(--keyText);
+  cursor: pointer;
+}
+
+input {
+  width: 400px;
+  height: 80px;
+  background-color: var(--screenBackground);
+  border-radius: 8px;
+  margin-bottom: 20px;
+  border: none;
+  font-size: 32px;
+  text-align: right;
+  color: var(--screenText);
+}
+
+/* .result h1 {
+    margin-right: 10px;
+} */
+
+.keys {
+  background-color: var(--keysBackground);
+  height: 400px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 8px;
+}
+
+#reset {
+  height: 60px;
+  width: 175px;
+  background-color: var(--delKey);
+  box-shadow: 0px 2px var(--delKeyShadow);
+  border-color: var(--delKey);
+  color: hsl(0, 0%, 100%);
+}
+
+#equals {
+  height: 60px;
+  width: 175px;
+  background-color: var(--equalsKey);
+  box-shadow: 0px 2px var(--equalsKeyShadow);
+  border-color: var(--equalsKey);
+  color: hsl(0, 0%, 100%);
+}
+.active3 #equals {
+  color: hsl(198, 20%, 13%);
+}
+
+#del {
+  background-color: var(--delKey);
+  box-shadow: 0px 2px var(--delKeyShadow);
+  border-color: var(--delKey);
+  color: hsl(0, 0%, 100%);
+}
+.title{
+    margin-bottom: 10px;
+}
+.toggle {
+  display: flex;
+  justify-content: space-between;
+  width: 400px;
+  margin-top: 5px
+}
+.toggle h3 {
+  margin: 0px;
+}
+.toggle p {
+  margin: 3px 6px;
+  font-size: 13px;
+cursor: pointer;
+
+}
+.right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: end;
+  
+}
+.control {
+  display: flex;
+  justify-content: flex-end;
+}
+.control p {
+  margin: 0px;
+  font-size: 12px;
+}
+.box {
+  width: 60px;
+  height: 15px;
+  background-color: var(--keysBackground);
+  border-radius: 30px;
+  margin-left: 4px;
+}
+#circle{
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    background-color: var(--equalsKey);
+    margin-top: 2px;
+    left: 2%;
+    position: relative;
+}
