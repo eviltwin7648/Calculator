@@ -18,7 +18,25 @@ Array.from(buttons).forEach((button) => {
     }
   });
 });
+// input from Keypress------------------------------------------------------------------->
+document.addEventListener("keypress", function (event) {
+  let keypress = event.key;
+  if (keypress == "Enter") {
+    string = eval(string);
+    document.querySelector("input").value = string;
+  } else if (keypress == "Backspace") {
+    string = string.slice(0, -1);
+    document.querySelector("input").value = string;
+  } else if (keypress == "RESET") {
+    string = "";
+    document.querySelector("input").value = string;
+  } else {
+    console.log(keypress);
+    string = string + keypress;
+    document.querySelector("input").value = string;
+  }
 
+});
 document.getElementById("one").addEventListener("click", function () {
   document.body.classList.remove("active2");
   document.body.classList.remove("active3");
