@@ -1,42 +1,51 @@
-let string = "";
+var string = "";
 let buttons = document.querySelectorAll("button");
 Array.from(buttons).forEach((button) => {
   button.addEventListener("click", (e) => {
     if (e.target.innerHTML == "=") {
-      string = eval(string);
-      document.querySelector("input").value = string;
+      calculateResult();
     } else if (e.target.innerHTML == "DEL") {
-      string = string.slice(0, -1);
-      document.querySelector("input").value = string;
+      removeLastCharacter();
     } else if (e.target.innerHTML == "RESET") {
-      string = "";
-      document.querySelector("input").value = string;
+      resetCalculator();
     } else {
-      console.log(e.target);
       string = string + e.target.innerHTML;
       document.querySelector("input").value = string;
     }
   });
 });
-// input from Keypress------------------------------------------------------------------->
-document.addEventListener("keypress", function (event) {
+
+// Input from Keydown
+document.addEventListener("keydown", function (event) {
   let keypress = event.key;
   if (keypress == "Enter") {
-    string = eval(string);
-    document.querySelector("input").value = string;
+    event.preventDefault(); // Prevent form submission
+    calculateResult();
   } else if (keypress == "Backspace") {
-    string = string.slice(0, -1);
-    document.querySelector("input").value = string;
-  } else if (keypress == "RESET") {
-    string = "";
-    document.querySelector("input").value = string;
+    removeLastCharacter();
+  } else if (keypress == "r") {
+    resetCalculator();
   } else {
-    console.log(keypress);
     string = string + keypress;
     document.querySelector("input").value = string;
   }
-
 });
+
+function calculateResult() {
+  string = eval(string);
+  document.querySelector("input").value = string;
+}
+
+function removeLastCharacter() {
+  string = string.slice(0, -1);
+  document.querySelector("input").value = string;
+}
+
+function resetCalculator() {
+  string = "";
+  document.querySelector("input").value = string;
+}
+
 document.getElementById("one").addEventListener("click", function () {
   document.body.classList.remove("active2");
   document.body.classList.remove("active3");
